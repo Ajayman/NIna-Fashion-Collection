@@ -15,10 +15,10 @@ app.set("view engine", "hbs");
 //change directory name view to templatePath
 app.set("views", templatePath);
 hbs.registerPartials(partialsPath);
-//  app.use(express.static(static_path));
+ app.use(express.static(static_path));
 
 app.get("/", (req, res)=> {
-    res.render("index",{
+    res.render("index.hbs",{
         brand: "Nina Fashion Collection"
     })
 })
