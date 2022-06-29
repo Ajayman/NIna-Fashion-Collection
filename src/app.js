@@ -15,10 +15,12 @@ app.set("view engine", "hbs");
 //change directory name view to templatePath
 app.set("views", templatePath);
 hbs.registerPartials(partialsPath);
- app.use(express.static(static_path));
+//  app.use(express.static(static_path));
 
 app.get("/", (req, res)=> {
-    res.send("welcome to awalsoft technical channel")
+    res.render("index",{
+        brand: "Nina Fashion Collection"
+    })
 })
 
 app.get("/about", (req, res)=> {
